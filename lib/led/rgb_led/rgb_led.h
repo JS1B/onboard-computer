@@ -4,17 +4,12 @@
 #include "hardware/pio.h"
 #include "ws2812.pio.h"
 
-
-
-class RGBLED {
+class RGBLed {
 public:
-    RGBLED(PIO pio, uint sm, uint pin, uint freq);
+    RGBLed(PIO pio, uint sm, uint pin, uint freq);
     void setColor(uint8_t red, uint8_t green, uint8_t blue);
-
     void setBrightness(uint8_t brightness);
-
-    void apply();
-
+    void update();
 
 private:
     struct State {
@@ -22,14 +17,13 @@ private:
         uint8_t green;
         uint8_t blue;
         uint8_t brightness;
-    } state, target;
+    } state;
 
     PIO pio;
     uint sm;
     uint offset;
 
-    void putPixel(uint32_t pixel_grb);
-    void update();
+    void putPixel(uint32_t pixel_rgb);
 };
 
 #endif // RGB_LED_H
