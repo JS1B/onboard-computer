@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD 17)
 # set(PICO_BOARD waveshare_rp2040_zero)
 pico_sdk_init()
 
-add_subdirectory(lib/led)
+add_subdirectory(lib)
 
 add_executable(${PROJECT_NAME}
     main.cpp
@@ -28,6 +28,7 @@ pico_enable_stdio_uart(${PROJECT_NAME} 1)
 target_link_libraries(${PROJECT_NAME}
     pico_stdlib
     led_library
+    bldc_motor_library
 )
 
 pico_add_extra_outputs(${PROJECT_NAME})

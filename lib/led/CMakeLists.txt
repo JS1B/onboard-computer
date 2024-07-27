@@ -1,4 +1,4 @@
-add_library(led_library
+add_library(led_library STATIC
     led_controller.cpp
     rgb_led/rgb_led.cpp
     on_off_led/on_off_led.cpp
