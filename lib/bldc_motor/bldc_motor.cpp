@@ -18,7 +18,7 @@ BLDCMotor::~BLDCMotor() {
 void BLDCMotor::init() {
     gpio_set_function(this->pwm_pin, GPIO_FUNC_PWM);
 
-    pwm_clock_params params = pwm_determine_params(this->freq_hz, clock_get_hz(clock_index::clk_sys), round_mode::round_up);
+    pwm_clock_params params = pwm_determine_params(this->freq_hz, clock_get_hz(clk_sys), round_mode::round_up);
 
     pwm_set_wrap(this->slice_num, params.wrap);
     pwm_set_chan_level(this->slice_num, this->channel, 0);
