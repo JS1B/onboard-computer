@@ -1,3 +1,5 @@
 add_subdirectory(led)
 add_subdirectory(pwm_helper)
 add_subdirectory(bldc_motor)
+add_subdirectory(vector3)
+add_subdirectory(pid_controller)

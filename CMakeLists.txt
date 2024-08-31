@@ -29,6 +29,8 @@ target_link_libraries(${PROJECT_NAME}
     pico_stdlib
     led_library
     bldc_motor_library
+    vector3_library
+    pid_controller_library
 )
 
 pico_add_extra_outputs(${PROJECT_NAME})
